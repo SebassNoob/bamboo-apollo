@@ -1,0 +1,30 @@
+{
+  "name": "bamboo-apollo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "NODE_ENV=production next build",
+    "start": "NODE_ENV=production next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@elysiajs/eden": "^0.7.4",
+    "@elysiajs/swagger": "^0.7.3",
+    "axios": "^1.5.1",
+    "elysia": "^0.7.15",
+    "next": "13.5.4",
+    "prettier": "^3.0.3",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "bun-types": "^1.0.5-canary.20231008T140131",
+    "eslint": "^8",
+    "eslint-config-next": "13.5.4",
+    "typescript": "^5"
+  }
+}

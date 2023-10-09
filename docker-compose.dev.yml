@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  frontend:
+    container_name: frontend
+    volumes:
+      - ./src/app:/app/src/app
+    build:
+      context: ./
+      dockerfile: ./src/Dockerfile
+    networks:
+      - test-network
+    ports:
+      - 3000:3000
+  api:
+    container_name: api
+    volumes:
+      - ./backend:/app/backend
+    build:
+      context: ./
+      dockerfile: ./backend/api/Dockerfile
+    networks:
+      - test-network
+    ports:
+      - 8080:8080
+
+networks:
+  test-network:
+    driver: bridge
