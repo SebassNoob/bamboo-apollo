@@ -3,8 +3,11 @@ version: '3'
 services:
   frontend:
     container_name: frontend
-    volumes:
-      - ./src/app:/app/src/app
+    develop:
+      watch:
+        - path: ./src/app
+          action: sync
+          target: /app/src/app      
     build:
       context: ./
       dockerfile: ./src/Dockerfile
@@ -14,8 +17,11 @@ services:
       - 3000:3000
   api:
     container_name: api
-    volumes:
-      - ./backend:/app/backend
+    develop:
+      watch:
+        - path: ./backend/api
+          action: sync
+          target: /app/backend/api
     build:
       context: ./
       dockerfile: ./backend/api/Dockerfile

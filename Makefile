@@ -13,7 +13,9 @@ endif
 
 run:
 	$(DC_CMD) -v down
-	$(DC_CMD) up -d --build --remove-orphans
+	$(DC_CMD) build 
+	$(DC_CMD) watch 
+	
 
 down:
 	$(DC_CMD) -v down
