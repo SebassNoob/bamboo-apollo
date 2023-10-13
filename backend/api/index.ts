@@ -2,10 +2,11 @@ import { Elysia, t } from 'elysia';
 import { swagger } from '@elysiajs/swagger';
 
 const PORT = 8080;
+const HOST = '0.0.0.0';
 
-const app = new Elysia()
+const app = new Elysia({ prefix: '/api' })
   .use(swagger())
-  .get('/', () => 'H sucu')
+  .get('/', () => 'H dfdffufgfgddfd')
   .get('/id/:id', ({ params: { id } }) => id)
   .get('/mirror', ({ body }) => body, {
     body: t.Object({
@@ -13,7 +14,10 @@ const app = new Elysia()
       name: t.String(),
     }),
   })
-  .listen(PORT);
+  .listen({
+    port: PORT,
+    hostname: HOST,
+  });
 
 console.log(`Listening on ${app.server?.hostname}:${app.server?.port}`);
 

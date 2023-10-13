@@ -11,9 +11,10 @@ else
 	tag := --$(version)
 endif
 
-run:
+build:
 	$(DC_CMD) -v down
 	$(DC_CMD) build 
+run:
 	$(DC_CMD) watch 
 	
 

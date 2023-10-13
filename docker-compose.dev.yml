@@ -7,7 +7,7 @@ services:
       watch:
         - path: ./src/app
           action: sync
-          target: /app/src/app      
+          target: /app/src/app
     build:
       context: ./
       dockerfile: ./src/Dockerfile

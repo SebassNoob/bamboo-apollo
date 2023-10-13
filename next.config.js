@@ -10,6 +10,18 @@ const nextConfig = {
     };
     return config;
   },
+  rewrites: async () => {
+    return [
+      {
+        source: '/api/:path*',
+        destination:
+          process.env.NODE_ENV === 'development' ? 'http://api:8080/api/:path*' : '/api/',
+      },
+    ];
+  },
+  experimental: {
+    serverActions: true,
+  },
 };
 
 module.exports = nextConfig;
